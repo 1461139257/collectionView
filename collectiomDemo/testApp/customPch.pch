@@ -1,0 +1,42 @@
+//
+//  customPch.pch
+//  testApp
+//
+//  Created by 刘恋 on 2018/8/24.
+//  Copyright © 2018年 刘恋. All rights reserved.
+//
+
+#ifndef customPch_pch
+#define customPch_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+//获取屏幕宽高
+#define KScreenWidth ([[UIScreen mainScreen] bounds].size.width)
+#define KScreenHeight [[UIScreen mainScreen] bounds].size.height
+
+
+//#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+//#define kNavBarHeight 44.0
+//#define kTabBarHeight ([[UIApplication sharedApplication] statusBarFrame].size.height>20?83:49)
+//#define kTopHeight (kStatusBarHeight + kNavBarHeight)
+//#define SafeAreaBottomHeight (KScreenHeight>=812?34:0)
+
+
+//弱引用
+#define kWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define WS(weakSelf)     __weak __typeof(&*self)weakSelf = self;
+
+#import <Masonry/Masonry.h>
+#import <MJRefresh/MJRefresh.h>
+#import "UIImageView+WebCache.h"
+
+#import "Global.h"
+
+
+#define PhotoWith  (KScreenWidth-40)/3
+
+#endif /* customPch_pch */
